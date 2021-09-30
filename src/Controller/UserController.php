@@ -22,7 +22,7 @@ use JMS\Serializer\SerializerInterface;
    /**
    * @param UserRepository $userRepository
    * @return JsonResponse
-   * @Route("/users")
+   * @Route("/users", methods="get")
    */
 
   public function getUsersPerpage(UserRepository $userRepository, PaginatorInterface $paginator, Request $request, SerializerInterface $serializer){

@@ -16,6 +16,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class AuthController extends ApiController
 {
 
+  /**
+   * 
+   * @return JsonResponse
+   * @Route("/register", methods="post")
+   */
   public function register(Request $request, UserPasswordEncoderInterface $encoder)
   {
    $em = $this->getDoctrine()->getManager();
@@ -39,9 +44,9 @@ class AuthController extends ApiController
   }
 
   /**
-   * @param UserInterface $user
-   * @param JWTTokenManagerInterface $JWTManager
+   * 
    * @return JsonResponse
+   * @Route("/api/login_check", methods="post")
    */
   public function getTokenUser(UserInterface $user, JWTTokenManagerInterface $JWTManager)
   {
